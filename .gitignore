@@ -1,0 +1,8 @@
+/bin
+!/bin/custom
+/config
+/data
+/log
+/roles
+/temp
+/.idea
