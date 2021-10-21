@@ -29,9 +29,19 @@
         <property name="bandDAO" ref="bandDAO"/>
     </bean>
 
+    <alias name="defaultProducerService" alias="producerService"/>
+    <bean id="defaultProducerService" class="concerttours.service.impl.DefaultProducerService">
+        <property name="producerDAO" ref="producerDAO"/>
+    </bean>
+
     <alias name="defaultBandFacade" alias="bandFacade"/>
     <bean id="defaultBandFacade" class="concerttours.facades.impl.DefaultBandFacade">
         <property name="bandService" ref="bandService"/>
+    </bean>
+
+    <alias name="defaultProducerFacade" alias="producerFacade"/>
+    <bean id="defaultProducerFacade" class="concerttours.facades.impl.DefaultProducerFacade">
+        <property name="producerService" ref="producerService"/>
     </bean>
 
     <alias name="defaultTourFacade" alias="tourFacade"/>

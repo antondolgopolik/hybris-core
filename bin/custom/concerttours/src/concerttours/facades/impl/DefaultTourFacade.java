@@ -1,10 +1,12 @@
 package concerttours.facades.impl;
 
 import concerttours.data.ConcertSummaryData;
+import concerttours.data.ProducerData;
 import concerttours.data.TourData;
 import concerttours.enums.ConcertType;
 import concerttours.facades.TourFacade;
 import concerttours.model.ConcertModel;
+import concerttours.model.ProducerModel;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.variants.model.VariantProductModel;
@@ -25,6 +27,11 @@ public class DefaultTourFacade implements TourFacade {
         if (product == null) {
             return null;
         }
+        // Create ProducerData
+        ProducerModel producerModel = product.getProducer();
+        ProducerData producerData = new ProducerData();
+        producerData.setName(producerModel.getName());
+        producerData.setSurname(producerModel.getSurname());
         // Create a list of ConcertSummaryData from the matches
         final List<ConcertSummaryData> concerts = new ArrayList<>();
         if (product.getVariants() != null) {
@@ -45,6 +52,7 @@ public class DefaultTourFacade implements TourFacade {
         final TourData tourData = new TourData();
         tourData.setId(product.getCode());
         tourData.setTourName(product.getName());
+        tourData.setProducer(producerData);
         tourData.setDescription(product.getDescription());
         tourData.setConcerts(concerts);
         return tourData;

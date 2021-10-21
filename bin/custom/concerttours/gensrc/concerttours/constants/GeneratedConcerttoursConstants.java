@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Oct 21, 2021 4:07:04 PM                     ---
+ * --- Generated at Oct 21, 2021 4:33:51 PM                     ---
  * ----------------------------------------------------------------
  */
 package concerttours.constants;
@@ -22,6 +22,7 @@ public class GeneratedConcerttoursConstants
 		public static final String MUSICTYPE = "MusicType".intern();
 		public static final String NEWS = "News".intern();
 		public static final String NOTLOREMIPSUMCONSTRAINT = "NotLoremIpsumConstraint".intern();
+		public static final String PRODUCER = "Producer".intern();
 	}
 	public static class Attributes
 	{
@@ -33,6 +34,7 @@ public class GeneratedConcerttoursConstants
 		{
 			public static final String BAND = "band".intern();
 			public static final String HASHTAG = "hashtag".intern();
+			public static final String PRODUCER = "producer".intern();
 		}
 	}
 	public static class Enumerations
@@ -51,6 +53,7 @@ public class GeneratedConcerttoursConstants
 	{
 		public static final String BAND2MUSICTYPE = "Band2MusicType".intern();
 		public static final String PRODUCT2ROCKBAND = "Product2RockBand".intern();
+		public static final String TOUR2PRODUCER = "Tour2Producer".intern();
 	}
 	
 	protected GeneratedConcerttoursConstants()

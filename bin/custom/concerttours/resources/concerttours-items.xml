@@ -45,9 +45,33 @@
                 <modifiers read="true" write="true" search="true" optional="true"/>
             </targetElement>
         </relation>
+
+        <relation code="Tour2Producer" localized="false">
+            <sourceElement type="Product" qualifier="tours" collectiontype="set" cardinality="many" ordered="false">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </sourceElement>
+            <targetElement type="Producer" qualifier="producer" cardinality="one">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </targetElement>
+        </relation>
     </relations>
 
     <itemtypes>
+        <itemtype code="Producer">
+            <deployment table="Producers" typecode="30271"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="name" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="surname" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
         <itemtype code="NotLoremIpsumConstraint" extends="AttributeConstraint"
                   autocreate="true" generate="true">
             <description>Custom constraint which checks for Lorem Ipsum text.</description>
